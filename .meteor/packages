@@ -12,3 +12,7 @@ flemay:less-autoprefixer
 kadira:flow-router
 kadira:blaze-layout
 coffeescript
+accounts-base
+accounts-facebook
+accounts-github
+accounts-password
