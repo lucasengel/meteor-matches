@@ -16,3 +16,5 @@ accounts-base
 accounts-facebook
 accounts-github
 accounts-password
+accounts-meteor-developer
+service-configuration
