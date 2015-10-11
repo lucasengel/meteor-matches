@@ -6,6 +6,9 @@ Template.dashboard.helpers
 		return TournamentRanks.find { userId: Meteor.userId() },
 			{ limit: 5, sort: { createdAt: -1 } }
 
+	top_players: ->
+		return Meteor.users.find {}, { limit: 10, sort: { rating: -1 } }
+
 	getTourneyName: (tourneyId) ->
 		tourney = Tournaments.findOne tourneyId
 		return tourney?.name

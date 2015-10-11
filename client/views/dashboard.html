@@ -3,7 +3,7 @@
     <div class="three column row">
       <div class="column">
         <h3 class="ui top attached header">
-          Matches
+          Matches <small>(last 5)</small>
         </h3>
         <div class='ui attached header centered'>
           {{#each match in last_matches}}
@@ -25,7 +25,7 @@
 
       <div class="column">
         <h3 class="ui top attached header">
-          Tournaments
+          Tournaments <small>(last 5)</small>
         </h3>
         <div class='ui attached header'>
           {{#each tourney in last_tourneys}}
@@ -61,8 +61,25 @@
 
       <div class="column">
         <h3 class="ui top attached header">
-          Ranking
+          Ranking <small>(top 10)</small>
         </h3>
+        <div class="ui attached header">
+          <table class="ui celled table">
+            <thead>
+              <th>Player</th>
+              <th>Rating</th>
+            </thead>
+
+            <tbody>
+              {{#each player in top_players}}
+                <tr>
+                  <td>{{ player.profile.name }}</td>
+                  <td>{{ player.rating }}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
         <div class="ui bottom attached header centered">
           <a href="{{pathFor 'ranking'}}">View all</a>
         </div>
