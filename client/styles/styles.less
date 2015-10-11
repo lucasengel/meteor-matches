@@ -7,9 +7,9 @@ body > .grid {
 }
 
 .fab.button {
-	position: fixed;
-	bottom: 50px;
-	right: 50px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
 }
 
 .pull-right {
@@ -34,4 +34,53 @@ body > .grid {
 
 .avatar-margin-10 {
   margin: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.match-user {
+  margin: 0 2px;
+  &.selected {
+    &:after {
+      content: "";
+      text-align: center;
+      color: #fff;
+      font-size: 32px;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      float: left;
+      z-index: 100;
+      opacity: .6;
+      background-color: #77D877;
+      border-radius: 50%;
+      border: 2px solid #5FAF5F;
+    }
+  }
+}
+
+.new-match-teams {
+  display: flex;
+
+  .match-score {
+    display: flex;
+    padding: 0 20px;
+
+    input, span {
+      text-align: center;
+      padding: 3px;
+      height: 30px;
+      margin: auto;
+    }
+  }
+
+  .new-match-players {
+    &:first-child {
+      justify-content: flex-end;
+    }
+    display: flex;
+    flex-grow: 1;
+  }
 }

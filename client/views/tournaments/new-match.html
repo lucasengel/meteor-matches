@@ -1,0 +1,34 @@
+<template name="tourneyNewMatch">
+	<div class="ui segment">
+		<h2 class="ui top attached">Match</h2>
+		<div class="new-match-teams">
+			<div class="new-match-players team-1">
+				{{#each users}}
+					{{> avatar userId=_id size='medium' shape='circle' class='match-user'}}
+				{{/each}}
+			</div>
+			<div class="match-score ui input">
+				<input type="text" size="2" class="score-team-1">
+				<span>x</span>
+				<input type="text" size="2" class="score-team-2">
+			</div>
+			<div class="new-match-players team-2">
+				{{#each users}}
+					{{> avatar userId=_id size='medium' shape='circle' class='match-user'}}
+				{{/each}}
+			</div>
+		</div>
+
+		<div class="ui padded grid">
+			<div class="column text-center">
+				<button class="ui primary button save-match">
+					Save
+				</button>
+				<button class="ui button cancel-match">
+					Cancel
+				</button>
+			</div>
+		</div>
+	</div>
+</template>
+

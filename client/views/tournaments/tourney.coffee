@@ -1,7 +1,6 @@
 Template.tourney.events
 	'click .fab.button': ->
-
-
+		FlowRouter.go 'tourney_match', _id: FlowRouter.getParam('_id')
 
 Template.tourney.onRendered ->
 	$('.tourney.menu .item').tab()
