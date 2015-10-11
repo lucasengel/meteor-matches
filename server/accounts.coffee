@@ -1,1 +1,3 @@
-Accounts.addAutopublishFields forOtherUsers: ['emails']
+Accounts.addAutopublishFields
+	forOtherUsers: ['emails', 'rating']
+	forLoggedInUser: ['rating']
