@@ -1,0 +1,1 @@
+Accounts.addAutopublishFields forOtherUsers: ['emails']

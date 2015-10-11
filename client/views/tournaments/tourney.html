@@ -37,28 +37,20 @@
       <div class="ui segments">
         <div class="ui vertically divided grid">
           {{#each match in matches}}
-            <div class="row">
-              <div class="seven wide column">
+            <div class="row flex align-items-center">
+              <div class="grow1 flex justify-flex-end">
                 {{#each player in match.teams.[0].players}}
-                  <img class="ui mini circular image right floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
                 {{/each}}
               </div>
-              <div class="two wide column">
-                <form action="post" class="ui form attached fluid">
-                  <div class="two fields">
-                    <div class="ui input">
-                      {{match.teams.[0].points}}
-                    </div>
-                    <i class="remove icon"></i>
-                    <div class="ui input">
-                      {{match.teams.[1].points}}
-                    </div>
-                  </div>
-                </form>
+              <div class="">
+                {{match.teams.[0].points}}
+                <i class="remove icon"></i>
+                {{match.teams.[1].points}}
               </div>
-              <div class="seven wide column">
+              <div class="grow1 flex">
                 {{#each player in match.teams.[1].players}}
-                  <img class="ui mini circular image left floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
                 {{/each}}
               </div>
             </div>
