@@ -2,39 +2,43 @@
 
   <h1>{{ tournamentName }}</h1>
 
-  <div class="ui segment">
+  <!-- <div class="ui segment"> -->
     <div class="ui pointing secondary menu tourney">
       <a class="active item" data-tab="scores">Scores</a>
       <a class="item" data-tab="matches">Matches</a>
       <a class="item" data-tab="grouped">Grouped</a>
     </div>
 
-    <div class="ui bottom attached active tab" data-tab="scores">
-      <table class="ui definition celled right aligned table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Rating</th>
-            <th>Games</th>
-            <th>Wons</th>
-            <th>Loses</th>
-            <th>Draws</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each rank in ranks}}
-            <tr>
-              <td>{{ getUserNameById rank.userId }}</td>
-              <td>{{ rank.rating }}</td>
-              <td>{{ rank.matches }}</td>
-              <td>{{ rank.wins }}</td>
-              <td>{{ rank.loses }}</td>
-              <td>{{ rank.draws }}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
+		<div class="ui bottom attached active tab" data-tab="scores">
+			<div class="ui segments">
+				<div class="ui segment">
+					<table class="ui definition celled right aligned table">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Rating</th>
+								<th>Games</th>
+								<th>Wons</th>
+								<th>Loses</th>
+								<th>Draws</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each rank in ranks}}
+								<tr>
+									<td>{{ getUserNameById rank.userId }}</td>
+									<td>{{ rank.rating }}</td>
+									<td>{{ rank.matches }}</td>
+									<td>{{ rank.wins }}</td>
+									<td>{{ rank.loses }}</td>
+									<td>{{ rank.draws }}</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 
     <div class="ui bottom attached tab" data-tab="matches">
       <div class="ui segments">
@@ -91,7 +95,7 @@
           {{/each}}
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 
   <button class="ui circular red icon huge fab button">
     <i class="plus icon"></i>
