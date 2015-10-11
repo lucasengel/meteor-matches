@@ -23,3 +23,8 @@ Template.tourney.helpers
 			return
 
 		return user.name or user.profile?.name
+
+	matches: ->
+		tournamentId = FlowRouter.getParam('_id')
+
+		return Matches.find tournamentId: tournamentId
