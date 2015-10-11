@@ -47,34 +47,29 @@
 					</div>
 					{{/if}}
 
-					<div class="ui right aligned grid">
-						<div class="seven wide column">
-              {{#each player in match.teams.[0].players}}
-                {{> avatar userId=player shape="circle" class="left-team avatar-margin-10"}}
-              {{/each}}
-						</div>
-
-						<div class="center aligned two wide column between-avatars">
-              {{match.teams.[0].points}}
-              <i class="remove icon"></i>
-              {{match.teams.[1].points}}
-						</div>
-
-						<div class="seven wide column">
-              {{#each player in match.teams.[1].players}}
-                {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
-              {{/each}}
-						</div>
-					</div>
+            <div class="flex align-items-center ribbon-match">
+              <div class="grow1 flex justify-flex-end">
+                {{#each player in match.teams.[0].players}}
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+                {{/each}}
+              </div>
+              <div>
+                {{match.teams.[0].points}} x {{match.teams.[1].points}}
+              </div>
+              <div class="grow1 flex">
+                {{#each player in match.teams.[1].players}}
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+                {{/each}}
+              </div>
+            </div>
 				</div>
 			{{/each}}
     </div>
 
     <div class="ui bottom attached tab" data-tab="grouped">
       <div class="ui segments">
-        <div class="ui vertically divided grid">
           {{#each match in groupedMatches}}
-            <div class="row flex align-items-center">
+            <div class="ui segment align-items-center flex">
               <div class="grow1 flex justify-flex-end">
                 {{#each player in match.teams.[0].players}}
                   {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
@@ -90,7 +85,6 @@
               </div>
             </div>
           {{/each}}
-        </div>
       </div>
     </div>
   </div>
