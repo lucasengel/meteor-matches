@@ -37,11 +37,14 @@ Template.tourneyNewMatch.events
 				players: Object.keys template.selectedPlayersTeam2.get()
 				score: $('.score-team-2').val()
 
-		console.log matchData
-
 		Meteor.call 'saveMatch', matchData, (error, result) ->
 			if error?
-				console.log error
+				return console.log error
+
+			FlowRouter.go 'tourney', { _id: FlowRouter.getParam('_id') }
+
+	'click .cancel-match': ->
+		FlowRouter.go 'tourney', { _id: FlowRouter.getParam('_id') }
 
 Template.tourneyNewMatch.onCreated ->
 	@selectedPlayersTeam1 = new ReactiveVar {}
