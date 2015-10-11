@@ -14,7 +14,7 @@ Template.tourney.helpers
 	ranks: ->
 		tournamentId = FlowRouter.getParam('_id')
 
-		return TournamentRanks.find tournamentId: tournamentId
+		return TournamentRanks.find {tournamentId: tournamentId}, {sort: {rating: -1}}
 
 	matches: ->
 		tournamentId = FlowRouter.getParam('_id')

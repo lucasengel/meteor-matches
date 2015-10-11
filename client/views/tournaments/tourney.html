@@ -1,47 +1,79 @@
 <template name="tourney">
 
-  <h1>{{ tournamentName }}</h1>
+	<h1>{{ tournamentName }}</h1>
 
-  <!-- <div class="ui segment"> -->
-    <div class="ui pointing secondary menu tourney">
-      <a class="active item" data-tab="ranking">Ranking</a>
-      <a class="item" data-tab="matches">Matches</a>
-      <a class="item" data-tab="grouped">Grouped</a>
-    </div>
+	<!-- <div class="ui segment"> -->
+		<div class="ui pointing secondary menu tourney">
+			<a class="active item" data-tab="ranking">Ranking</a>
+			<a class="item" data-tab="matches">Matches</a>
+			<a class="item" data-tab="grouped">Grouped</a>
+		</div>
 
 		<div class="ui bottom attached active tab" data-tab="ranking">
 			<div class="ui segments">
-				<div class="ui segment">
-					<table class="ui definition celled right aligned table">
-						<thead>
-							<tr>
-								<th></th>
-								<th>Rating</th>
-								<th>Games</th>
-								<th>Wons</th>
-								<th>Loses</th>
-								<th>Draws</th>
-							</tr>
-						</thead>
-						<tbody>
-							{{#each rank in ranks}}
-								<tr>
-									<td>{{ getUserNameById rank.userId }}</td>
-									<td>{{ rank.rating }}</td>
-									<td>{{ rank.matches }}</td>
-									<td>{{ rank.wins }}</td>
-									<td>{{ rank.loses }}</td>
-									<td>{{ rank.draws }}</td>
-								</tr>
-							{{/each}}
-						</tbody>
-					</table>
-				</div>
+				{{#each rank in ranks}}
+					<div class="ui segment">
+						<div class='flex align-items-center'>
+							<div class="h2">
+								#{{ add1 @index }}
+							</div>
+							<div>
+								{{> avatar userId=rank.userId shape="circle" class="avatar-margin-10"}}
+							</div>
+							<div class="grow1 h2">
+								{{ getUserNameById rank.userId }}
+							</div>
+							<div class="flex justify-flex-center align-items-center">
+								<div></div>
+								<div class='ui mini statistic'>
+									<div class="value">
+										{{ rank.rating }}
+									</div>
+									<div class="label">
+										points
+									</div>
+								</div>
+								<div class='ui mini statistic'>
+									<div class="value">
+										{{ rank.matches }}
+									</div>
+									<div class="label">
+										matches
+									</div>
+								</div>
+								<div class='ui mini statistic'>
+									<div class="value">
+										{{ rank.wins }}
+									</div>
+									<div class="label">
+										wins
+									</div>
+								</div>
+								<div class='ui mini statistic'>
+									<div class="value">
+										{{ rank.loses }}
+									</div>
+									<div class="label">
+										loses
+									</div>
+								</div>
+								<div class='ui mini statistic'>
+									<div class="value">
+										{{ rank.draws }}
+									</div>
+									<div class="label">
+										draws
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/each}}
 			</div>
 		</div>
 
-    <div class="ui bottom attached tab" data-tab="matches">
-      <div class="ui segments">
+		<div class="ui bottom attached tab" data-tab="matches">
+			<div class="ui segments">
 			{{#each match in matches}}
 				<div class="ui segment">
 					<div class="ui blue ribbon label">
@@ -54,51 +86,51 @@
 					</div>
 					{{/if}}
 
-            <div class="flex align-items-center ribbon-match">
-              <div class="grow1 flex justify-flex-end">
-                {{#each player in match.teams.[0].players}}
-                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
-                {{/each}}
-              </div>
-              <div>
-                {{match.teams.[0].points}} x {{match.teams.[1].points}}
-              </div>
-              <div class="grow1 flex">
-                {{#each player in match.teams.[1].players}}
-                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
-                {{/each}}
-              </div>
-            </div>
+						<div class="flex align-items-center ribbon-match">
+							<div class="grow1 flex justify-flex-end">
+								{{#each player in match.teams.[0].players}}
+									{{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+								{{/each}}
+							</div>
+							<div>
+								{{match.teams.[0].points}} x {{match.teams.[1].points}}
+							</div>
+							<div class="grow1 flex">
+								{{#each player in match.teams.[1].players}}
+									{{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+								{{/each}}
+							</div>
+						</div>
 				</div>
 			{{/each}}
-      </div>
-    </div>
+			</div>
+		</div>
 
-    <div class="ui bottom attached tab" data-tab="grouped">
-      <div class="ui segments">
-          {{#each match in groupedMatches}}
-            <div class="ui segment align-items-center flex">
-              <div class="grow1 flex justify-flex-end">
-                {{#each player in match.teams.[0].players}}
-                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
-                {{/each}}
-              </div>
-              <div>
-                {{match.teams.[0].points}} x {{match.teams.[1].points}}
-              </div>
-              <div class="grow1 flex">
-                {{#each player in match.teams.[1].players}}
-                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
-                {{/each}}
-              </div>
-            </div>
-          {{/each}}
-      </div>
-    </div>
-  <!-- </div> -->
+		<div class="ui bottom attached tab" data-tab="grouped">
+			<div class="ui segments">
+					{{#each match in groupedMatches}}
+						<div class="ui segment align-items-center flex">
+							<div class="grow1 flex justify-flex-end">
+								{{#each player in match.teams.[0].players}}
+									{{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+								{{/each}}
+							</div>
+							<div>
+								{{match.teams.[0].points}} x {{match.teams.[1].points}}
+							</div>
+							<div class="grow1 flex">
+								{{#each player in match.teams.[1].players}}
+									{{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+								{{/each}}
+							</div>
+						</div>
+					{{/each}}
+			</div>
+		</div>
+	<!-- </div> -->
 
-  <button class="ui circular red icon huge fab button">
-    <i class="plus icon"></i>
-  </button>
+	<button class="ui circular red icon huge fab button">
+		<i class="plus icon"></i>
+	</button>
 
 </template>
