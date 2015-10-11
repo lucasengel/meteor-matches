@@ -1,5 +1,10 @@
+Template.tourney.events
+	'click .fab.button': ->
+
+
+
 Template.tourney.onRendered ->
-  $('.tourney.menu .item').tab()
+	$('.tourney.menu .item').tab()
 
 Template.tourney.helpers
 	tournamentName: ->
