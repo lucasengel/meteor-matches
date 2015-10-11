@@ -5,69 +5,64 @@
         <h3 class="ui top attached header">
           Matches
         </h3>
-		<div class='ui attached header centered'>
-			{{#each match in last_matches}}
-				{{#each player in match.teams.[0].players}}
-                  <img class="ui mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-				{{/each}}
+        <div class='ui attached header centered'>
+          {{#each match in last_matches}}
+            {{#each player in match.teams.[0].players}}
+              <img class="ui mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+            {{/each}}
 
-				{{ match.teams.[0].score }}
+            {{ match.teams.[0].score }} x {{ match.teams.[1].score }}
 
-				x
-
-				{{ match.teams.[1].score }}
-
-				{{#each player in match.teams.[1].players}}
-                  <img class="ui mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-				{{/each}}
-			{{/each}}
-		</div>
+            {{#each player in match.teams.[1].players}}
+              <img class="ui mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+            {{/each}}
+          {{/each}}
+        </div>
         <div class="ui bottom attached header centered">
           <a href="{{pathFor 'matches'}}">View all</a>
         </div>
       </div>
-      <div class="column">
 
+      <div class="column">
         <h3 class="ui top attached header">
           Tournaments
         </h3>
-		<div class='ui attached header'>
-			{{#each tourney in last_tourneys}}
-				<div class='ui mini horizontal statistic'>
-					<div class="value">
-						{{ getTourneyName tourney.tournamentId }}
-					</div>
-					<div class="label">
-						<div class='ui mini statistic'>
-							<div class="value">
-								{{ tourney.wins }}
-							</div>
-							<div class="label">
-								wins
-							</div>
-						</div>
-						<div class="ui mini statistic">
-							<div class="value">
-								{{ tourney.loses }}
-							</div>
-							<div class="label">
-								loses
-							</div>
-						</div>
-					</div>
-				</div>
-			{{/each}}
-		</div>
+        <div class='ui attached header'>
+          {{#each tourney in last_tourneys}}
+          <div class='ui mini horizontal statistic' style='width:100%'>
+            <div class="value" style='width:50%'>
+              {{ getTourneyName tourney.tournamentId }}
+            </div>
+            <div class="label">
+              <div class='ui mini statistic'>
+                <div class="value">
+                  {{ tourney.wins }}
+                </div>
+                <div class="label">
+                  wins
+                </div>
+              </div>
+              <div class="ui mini statistic">
+                <div class="value">
+                  {{ tourney.loses }}
+                </div>
+                <div class="label">
+                  loses
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
         <div class="ui bottom attached header centered">
           <a href="{{pathFor 'tourney_list'}}">View all</a>
         </div>
       </div>
-      <div class="column">
 
+      <div class="column">
         <h3 class="ui top attached header">
           Ranking
         </h3>
-
         <div class="ui bottom attached header centered">
           <a href="{{pathFor 'ranking'}}">View all</a>
         </div>
