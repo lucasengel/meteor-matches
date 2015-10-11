@@ -1,6 +1,24 @@
 Meteor.methods
 	saveMatch: (matchData) ->
 		# @TODO validate data
+
+		errors = []
+
+		if matchData.team1.players.length is 0
+			errors.push 'Choose at least one player for team 1'
+
+		if matchData.team2.players.length is 0
+			errors.push 'Choose at least one player for team 2'
+
+		if matchData.team1.score.trim() is ''
+			errors.push 'Insert a score for team 1'
+
+		if matchData.team2.score.trim() is ''
+			errors.push 'Insert a score for team 2'
+
+		if errors.length > 0
+			throw new Meteor.Error 'invalid-match-data', errors.join '. '
+
 		matchData.team1.score = parseInt matchData.team1.score
 		matchData.team2.score = parseInt matchData.team2.score
 
@@ -50,8 +68,8 @@ Meteor.methods
 				}
 			], 'hash')
 
-		winners = undefined
-		losers = undefined
+		winners = []
+		losers = []
 		players = [].concat(matchData.team1.players).concat(matchData.team2.players)
 
 		if decisionTeam1 is 1

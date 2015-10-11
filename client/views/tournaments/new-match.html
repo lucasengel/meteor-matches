@@ -4,7 +4,7 @@
 		<div class="new-match-teams">
 			<div class="new-match-players team-1">
 				{{#each users}}
-					{{> avatar userId=_id size='medium' shape='circle' class='match-user'}}
+					{{> avatar userId=_id size='medium' shape='circle' class=userClassTeam1}}
 				{{/each}}
 			</div>
 			<div class="match-score ui input">
@@ -14,9 +14,17 @@
 			</div>
 			<div class="new-match-players team-2">
 				{{#each users}}
-					{{> avatar userId=_id size='medium' shape='circle' class='match-user'}}
+					{{> avatar userId=_id size='medium' shape='circle' class=userClassTeam2}}
 				{{/each}}
 			</div>
+		</div>
+
+		<div class="ui error message {{showError}}">
+			<ul>
+			{{#each errors}}
+				<li>{{.}}</li>
+			{{/each}}
+			</ul>
 		</div>
 
 		<div class="ui padded grid">

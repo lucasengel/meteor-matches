@@ -48,23 +48,30 @@ body > .grid {
   margin-top: -25px;
 }
 
-.match-user {
-  margin: 0 2px;
-  &.selected {
-    &:after {
-      content: "";
-      text-align: center;
-      color: #fff;
-      font-size: 32px;
-      height: 100%;
-      width: 100%;
-      position: relative;
-      float: left;
-      z-index: 100;
-      opacity: .6;
-      background-color: #77D877;
-      border-radius: 50%;
-      border: 2px solid #5FAF5F;
+.new-match-teams {
+  .match-user {
+    cursor: pointer;
+    margin: 0 2px;
+    &.selected {
+      &:after {
+        content: "";
+        text-align: center;
+        color: #fff;
+        font-size: 32px;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        float: left;
+        z-index: 100;
+        opacity: .6;
+        background-color: #77D877;
+        border-radius: 50%;
+        border: 2px solid #5FAF5F;
+      }
+    }
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.3;
     }
   }
 }
