@@ -1,7 +1,11 @@
 <template name="mainLayout">
-	{{#if currentUser}}
-		{{> Template.dynamic template=main}}
-	{{else}}
-		{{> login}}
-	{{/if}}
+	{{> menu }}
+
+	<div class="ui container">
+		{{#if currentUser}}
+			{{> Template.dynamic template=main}}
+		{{else}}
+			{{> login}}
+		{{/if}}
+	</div>
 </template>

@@ -1,5 +1,12 @@
 <template name="tournaments">
-	{{#each tournaments}}
-		{{name}}
-	{{/each}}
+  <h1>Tournaments</h1>
+  <div class="ui column">
+    <div class="segment">
+      <ul>
+        {{#each tournaments}}
+          <li>{{name}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 </template>
