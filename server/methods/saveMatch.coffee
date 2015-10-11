@@ -23,8 +23,6 @@ Meteor.methods
 		hashTeam1 = CryptoJS.MD5(matchData.team1.players.sort().join('|')).toString()
 		hashTeam2 = CryptoJS.MD5(matchData.team2.players.sort().join('|')).toString()
 
-		teams = [hashTeam1, hashTeam2]
-
 		Matches.insert
 			createdAt: new Date()
 			createdBy: this.userId

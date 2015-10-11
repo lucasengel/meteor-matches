@@ -5,28 +5,24 @@
         <h3 class="ui top attached header">
           Matches <small>(last 5)</small>
         </h3>
-        <div class='ui attached header centered'>
-          <div class="ui three column grid">
-            {{#each match in last_matches}}
-              <div class="row">
-                <div class="column">
-                  {{#each player in match.teams.[0].players}}
-                    <img class="ui right floated mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-                  {{/each}}
-                </div>
-
-                <div class="column">
-                  {{ match.teams.[0].score }} x {{ match.teams.[1].score }}
-                </div>
-
-                <div class="column">
-                  {{#each player in match.teams.[1].players}}
-                    <img class="ui left floated mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-                  {{/each}}
-                </div>
+        <div class="ui attached segment">
+          {{#each match in last_matches}}
+            <div class="row flex align-items-center">
+              <div class="grow1 flex justify-flex-end">
+                {{#each player in match.teams.[0].players}}
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+                {{/each}}
               </div>
-            {{/each}}
-          </div>
+              <div>
+                {{match.teams.[0].points}} x {{match.teams.[1].points}}
+              </div>
+              <div class="grow1 flex">
+                {{#each player in match.teams.[1].players}}
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
         </div>
         <div class="ui bottom attached header centered">
           <a href="{{pathFor 'matches'}}">View all</a>
