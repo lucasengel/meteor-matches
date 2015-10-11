@@ -5,21 +5,22 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
-semantic:ui
-flemay:less-autoprefixer
-kadira:flow-router
-kadira:blaze-layout
-coffeescript
+
 accounts-base
 accounts-facebook
 accounts-github
-accounts-password
 accounts-meteor-developer
-service-configuration
-raix:handlebar-helpers
+accounts-password
+autopublish
+coffeescript
 reactive-var
-utilities:avatar
+service-configuration
+
+flemay:less-autoprefixer
 jparker:crypto-md5
+kadira:blaze-layout
+kadira:flow-router
 momentjs:moment
+raix:handlebar-helpers
+semantic:ui
+utilities:avatar
