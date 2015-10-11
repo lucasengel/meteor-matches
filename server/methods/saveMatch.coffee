@@ -36,7 +36,8 @@ Meteor.methods
 					score: matchData.team1.score
 					points: pointsTeam1
 					decision: decisionTeam1
-					approved: false
+					# TODO: Change to false
+					approved: true
 				}
 				{
 					hash: hashTeam2
@@ -44,6 +45,47 @@ Meteor.methods
 					score: matchData.team2.score
 					points: pointsTeam2
 					decision: decisionTeam2
-					approved: false
+					# TODO: Change to false
+					approved: true
 				}
 			], 'hash')
+
+		winners = undefined
+		losers = undefined
+		players = [].concat(matchData.team1.players).concat(matchData.team2.players)
+
+		if decisionTeam1 is 1
+			winners = matchData.team1.players
+			losers = matchData.team2.players
+		else if decisionTeam2 is 1
+			winners = matchData.team2.players
+			losers = matchData.team1.players
+
+		for player in players
+			update =
+				$inc:
+					matches: 1
+					wins: 0
+					draws: 0
+					loses: 0
+					rating: 0
+
+			if winners.indexOf(player) > -1
+				update.$inc.wins = 1
+				# TODO: Remove
+				update.$inc.rating = 10
+			else if losers.indexOf(player) > -1
+				update.$inc.loses = 1
+				# TODO: Remove
+				update.$inc.rating = -10
+			else
+				update.$inc.draws = 1
+
+			# TODO: Calc rating
+
+			TournamentRanks.upsert
+				tournamentId: matchData.tournamentId
+				userId: player
+			, update
+
+			Meteor.users.update player, update
