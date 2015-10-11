@@ -16,13 +16,6 @@ Template.tourney.helpers
 
 		return TournamentRanks.find tournamentId: tournamentId
 
-	getUserNameById: (userId) ->
-		user = Meteor.users.findOne(userId)
-		if not user?
-			return
-
-		return user.name or user.profile?.name
-
 	matches: ->
 		tournamentId = FlowRouter.getParam('_id')
 
