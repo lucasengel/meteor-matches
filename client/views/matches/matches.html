@@ -6,6 +6,16 @@
 				<div class="ui divider"></div>
 			{{/if}}
 			<div class="row flex align-items-center">
+				<div class="ui blue ribbon label">
+					{{ niceDate match.createdAt }}
+				</div>
+
+				{{#if match.tournamentId}}
+				<div class="ui bottom right attached label">
+					Created by: {{ getUserNameById match.createdBy }}
+				</div>
+				{{/if}}
+
 				<div class="grow1 flex justify-flex-end">
 					{{#each player in match.teams.[0].players}}
 						{{> avatar userId=player shape="circle" class="avatar-margin-10"}}
@@ -23,4 +33,3 @@
 		{{/each}}
 	</div>
 </template>
-

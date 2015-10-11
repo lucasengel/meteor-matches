@@ -58,7 +58,3 @@ Template.tourney.helpers
 			groupedMatches.push match
 
 		return groupedMatches
-
-	niceDate: (date) ->
-		parsed = moment(date)
-		return parsed.format('L')
