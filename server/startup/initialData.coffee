@@ -10,8 +10,14 @@ Meteor.startup ->
 				draws: 0
 				matches: 11
 				rating: 100
-				email: 'julio.biason@gmail.com'
-				password: 'test123'
+				emails: [
+					address: 'julio.biason@gmail.com'
+					verified: true
+				]
+				services:
+					password:
+						bcrypt:
+							'$2a$10$7TpUYF5Vb4sdVseokiiBAevSy2m9vwFrGNStoYMC5EtUYAfx0rYYi'
 			u2 = Meteor.users.insert
 				profile:
 					name: 'Gabriel'
@@ -20,8 +26,14 @@ Meteor.startup ->
 				draws: 2
 				matches: 12
 				rating: 200
-				email: 'gabrielfengel@gmail.com'
-				password: 'test123'
+				emails: [
+					address: 'gabrielfengel@gmail.com'
+					verified: true
+				]
+				services:
+					password:
+						bcrypt:
+							'$2a$10$7TpUYF5Vb4sdVseokiiBAevSy2m9vwFrGNStoYMC5EtUYAfx0rYYi'
 		else
 			u1 = Meteor.users.find({name:'Julio'})?._id
 			u2 = Meteor.users.find({name:'Gabriel'})?._id
