@@ -33,31 +33,43 @@
         </tbody>
       </table>
     </div>
+
     <div class="ui bottom attached tab" data-tab="matches">
-      <div class="ui segments">
-        <div class="ui vertically divided grid">
-          {{#each match in matches}}
-            <div class="row flex align-items-center">
-              <div class="grow1 flex justify-flex-end">
-                {{#each player in match.teams.[0].players}}
-                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
-                {{/each}}
-              </div>
-              <div class="">
-                {{match.teams.[0].points}}
-                <i class="remove icon"></i>
-                {{match.teams.[1].points}}
-              </div>
-              <div class="grow1 flex">
-                {{#each player in match.teams.[1].players}}
-                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
-                {{/each}}
-              </div>
-            </div>
-          {{/each}}
-        </div>
-      </div>
+			{{#each match in matches}}
+				<div class="ui segment">
+					<div class="ui blue ribbon label">
+						{{ niceDate match.createdAt }}
+					</div>
+
+					{{#if match.tournamentId}}
+					<div class="ui bottom right attached label">
+						Tournament: {{ tournamentName match.tournamentId }}
+					</div>
+					{{/if}}
+
+					<div class="ui right aligned grid">
+						<div class="seven wide column">
+              {{#each player in match.teams.[0].players}}
+                {{> avatar userId=player shape="circle" class="left-team avatar-margin-10"}}
+              {{/each}}
+						</div>
+
+						<div class="center aligned two wide column between-avatars">
+              {{match.teams.[0].points}}
+              <i class="remove icon"></i>
+              {{match.teams.[1].points}}
+						</div>
+
+						<div class="seven wide column">
+              {{#each player in match.teams.[1].players}}
+                {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+              {{/each}}
+						</div>
+					</div>
+				</div>
+			{{/each}}
     </div>
+
     <div class="ui bottom attached tab" data-tab="grouped">
       <div class="ui segments">
         <div class="ui vertically divided grid">
