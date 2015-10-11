@@ -6,17 +6,27 @@
           Matches <small>(last 5)</small>
         </h3>
         <div class='ui attached header centered'>
-          {{#each match in last_matches}}
-            {{#each player in match.teams.[0].players}}
-              <img class="ui mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-            {{/each}}
+          <div class="ui three column grid">
+            {{#each match in last_matches}}
+              <div class="row">
+                <div class="column">
+                  {{#each player in match.teams.[0].players}}
+                    <img class="ui right floated mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+                  {{/each}}
+                </div>
 
-            {{ match.teams.[0].score }} x {{ match.teams.[1].score }}
+                <div class="column">
+                  {{ match.teams.[0].score }} x {{ match.teams.[1].score }}
+                </div>
 
-            {{#each player in match.teams.[1].players}}
-              <img class="ui mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+                <div class="column">
+                  {{#each player in match.teams.[1].players}}
+                    <img class="ui left floated mini circular image" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+                  {{/each}}
+                </div>
+              </div>
             {{/each}}
-          {{/each}}
+          </div>
         </div>
         <div class="ui bottom attached header centered">
           <a href="{{pathFor 'matches'}}">View all</a>
