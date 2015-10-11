@@ -4,9 +4,21 @@
 	{{#each tournaments}}
 		<div class="ui padded raised segment">
 			<a href='{{pathFor 'tourney' _id=_id}}'>
-				<p>
-					{{name}}
-				</p>
+				<div class="flex align-items-center">
+					<div class="grow1">
+						{{name}}
+					</div>
+					<div class="label">
+						<div class="ui mini statistic">
+							<div class="value">
+								{{matches}}
+							</div>
+							<div class="label">
+								games
+							</div>
+						</div>
+					</div>
+				</div>
 			</a>
 		</div>
 	{{/each}}
