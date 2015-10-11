@@ -12,6 +12,6 @@ Template.login.events
 		email = t.find('[name=email]').value
 		password = t.find('[name=password]').value
 
-		Meteor.loginWithPassword {email: email}, password
+		Meteor.loginWithPassword email, password
 
 		e.preventDefault()

@@ -1,6 +1,7 @@
 BlazeLayout.setRoot('body')
 
 FlowRouter.route '/',
+	name: 'dashboard'
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "dashboard"}
 
