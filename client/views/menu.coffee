@@ -6,3 +6,6 @@ Template.menu.events
 	'click .logout': ->
 		Meteor.logout()
 		FlowRouter.go '/'
+
+Template.menu.onRendered ->
+	$('.ui.dropdown').dropdown()

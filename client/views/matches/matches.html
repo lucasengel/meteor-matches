@@ -1,5 +1,23 @@
 <template name="matches">
-	{{#each matches}}
-		{{_id}}
-	{{/each}}
+	<h1>My Matches</h1>
+	<div class="ui segment">
+		{{#each match in matches}}
+			<div class="row flex align-items-center">
+				<div class="grow1 flex justify-flex-end">
+					{{#each player in match.teams.[0].players}}
+						{{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+					{{/each}}
+				</div>
+				<div>
+					{{match.teams.[0].points}} x {{match.teams.[1].points}}
+				</div>
+				<div class="grow1 flex">
+					{{#each player in match.teams.[1].players}}
+						{{> avatar userId=player shape="circle" class="avatar-margin-10"}}
+					{{/each}}
+				</div>
+			</div>
+		{{/each}}
+	</div>
 </template>
+

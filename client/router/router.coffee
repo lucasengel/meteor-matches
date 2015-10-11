@@ -5,12 +5,10 @@ FlowRouter.route '/',
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "dashboard"}
 
-
 FlowRouter.route '/matches',
 	name: 'matches'
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "matches"}
-
 
 FlowRouter.route '/tourney',
 	name: 'tourney_list'

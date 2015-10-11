@@ -6,13 +6,24 @@
 		<a href="{{pathFor 'tourney_list'}}" class="{{active 'tourney_list' 'tourney' 'tourney_match' 'new_tourney'}} item">
 			Tourneys
 		</a>
+		<a href="{{pathFor 'matches'}}" class="{{active 'matches'}} item">
+			Matches
+		</a>
 		<a href="{{pathFor 'ranking'}}" class="{{active 'ranking'}} item">
 			Ranking
 		</a>
 		<div class="right menu">
-			<a class="ui item logout">
-				Logout
-			</a>
+			<div class="ui dropdown link item">
+				{{#with currentUser}}
+					{{> avatar userId=_id shape="circle" size="extra-small" class="user-logout"}}
+					<span class="text">{{profile.name}}</span>
+					<i class="dropdown icon"></i>
+					<div class="menu">
+						<div class="item logout">Logout</div>
+					</div>
+				{{/with}}
+			</div>
 		</div>
 	</div>
 </template>
+

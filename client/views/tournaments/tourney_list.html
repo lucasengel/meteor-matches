@@ -1,18 +1,16 @@
 <template name="tourney_list">
 	<h1>Tournaments</h1>
-	<div class="ui segment">
-		<div class="ui relaxed divided list">
-			{{#each tournaments}}
-				<div class="item">
-					<a href='{{pathFor 'tourney' _id=_id}}'>
-						<p>
-							{{name}}
-						</p>
-					</a>
-				</div>
-			{{/each}}
+
+	{{#each tournaments}}
+		<div class="ui padded raised segment">
+			<a href='{{pathFor 'tourney' _id=_id}}'>
+				<p>
+					{{name}}
+				</p>
+			</a>
 		</div>
-	</div>
+	{{/each}}
+
 	<button class="ui circular red icon huge fab button">
 		<i class="plus icon"></i>
 	</button>
