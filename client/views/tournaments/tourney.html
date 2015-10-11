@@ -1,7 +1,7 @@
 <template name="tourney">
 
-  <h1>Tourney Name</h1>
-  
+  <h1>{{ tournamentName }}</h1>
+
   <div class="ui column stackable grid">
     <div class="ui pointing secondary menu tourney">
       <a class="active item" data-tab="scores">Scores</a>
@@ -22,82 +22,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
+          {{#each ranks}}
+            <tr>
+              <td>{{ getUserNameById userId }}</td>
+              <td>{{ matches }}</td>
+              <td>{{ wins }}</td>
+              <td>{{ loses }}</td>
+              <td>{{ draws }}</td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
     <div class="ui bottom attached tab segment" data-tab="matches">
       <h2>Matches</h2>
-      
+
     </div>
     <div class="ui bottom attached tab segment" data-tab="grouped">
       <h2>Grouped</h2>
