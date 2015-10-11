@@ -31,6 +31,33 @@
         <h3 class="ui top attached header">
           Tournaments
         </h3>
+		<div class='ui attached header'>
+			{{#each tourney in last_tourneys}}
+				<div class='ui mini horizontal statistic'>
+					<div class="value">
+						{{ getTourneyName tourney.tournamentId }}
+					</div>
+					<div class="label">
+						<div class='ui mini statistic'>
+							<div class="value">
+								{{ tourney.wins }}
+							</div>
+							<div class="label">
+								wins
+							</div>
+						</div>
+						<div class="ui mini statistic">
+							<div class="value">
+								{{ tourney.loses }}
+							</div>
+							<div class="label">
+								loses
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
         <div class="ui bottom attached header centered">
           <a href="{{pathFor 'tourney_list'}}">View all</a>
         </div>
