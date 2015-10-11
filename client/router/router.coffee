@@ -17,6 +17,10 @@ FlowRouter.route '/tourney',
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "tourney_list"}
 
+FlowRouter.route '/tourney/new',
+	name: 'new_tourney'
+	action: (params) ->
+		BlazeLayout.render "mainLayout", {main: "tourneyNew"}
 
 FlowRouter.route '/tourney/:_id',
 	name: 'tourney'
