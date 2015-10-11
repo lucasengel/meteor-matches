@@ -1,6 +1,7 @@
 <template name="tourney_list">
 	<h1>Tournaments</h1>
 
+	<div class="ui segments">
 	{{#each tournaments}}
 		<div class="ui padded raised segment">
 			<a href='{{pathFor 'tourney' _id=_id}}'>
@@ -22,6 +23,7 @@
 			</a>
 		</div>
 	{{/each}}
+	</div>
 
 	<button class="ui circular red icon huge fab button">
 		<i class="plus icon"></i>

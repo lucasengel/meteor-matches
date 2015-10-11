@@ -1,10 +1,8 @@
 <template name="matches">
 	<h1>My Matches</h1>
-	<div class="ui segment">
-		{{#each match in matches}}
-			{{#if $gt @index 0}}
-				<div class="ui divider"></div>
-			{{/if}}
+	<div class="ui segments">
+	{{#each match in matches}}
+		<div class="ui segment">
 			<div class="row flex align-items-center">
 				<div class="ui blue ribbon label">
 					{{ niceDate match.createdAt }}
@@ -30,6 +28,7 @@
 					{{/each}}
 				</div>
 			</div>
-		{{/each}}
+		</div>
+	{{/each}}
 	</div>
 </template>
