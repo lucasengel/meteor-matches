@@ -50,8 +50,8 @@ Meteor.methods
 				}
 			], 'hash')
 
-		winners = undefined
-		losers = undefined
+		winners = []
+		losers = []
 		players = [].concat(matchData.team1.players).concat(matchData.team2.players)
 
 		if decisionTeam1 is 1
