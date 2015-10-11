@@ -21,3 +21,4 @@ service-configuration
 raix:handlebar-helpers
 reactive-var
 utilities:avatar
+jparker:crypto-md5
