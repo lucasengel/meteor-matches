@@ -1,14 +1,17 @@
 <template name="menu">
-	<div class="ui menu secondary pointing">
-		<a class="{{active 'dashboard'}} item">
-			<a href="{{pathFor 'dashboard'}}">Dashboard</a>
+	<div class="ui orange menu secondary pointing">
+		<a href="{{pathFor 'dashboard'}}" class="{{active 'dashboard'}} item">
+			Dashboard
 		</a>
-		<a class="{{active 'tourney_list' 'tourney'}} item">
-			<a href="{{pathFor 'tourney_list'}}">Tourneys</a>
+		<a href="{{pathFor 'tourney_list'}}" class="{{active 'tourney_list' 'tourney'}} item">
+			Tourneys
+		</a>
+		<a href="{{pathFor 'ranking'}}" class="{{active 'ranking'}} item">
+			Ranking
 		</a>
 		<div class="right menu">
-			<a class="ui item">
-				<a href="#logout" class="logout">Logout</a>
+			<a class="ui item logout">
+				Logout
 			</a>
 		</div>
 	</div>
