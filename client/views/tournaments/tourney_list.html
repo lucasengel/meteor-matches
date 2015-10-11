@@ -1,13 +1,15 @@
 <template name="tourney_list">
 	<h1>Tournaments</h1>
-	<div class="ui column">
-		<div class="segment ui raised">
+	<div class="ui segment">
+		<div class="ui relaxed divided list">
 			{{#each tournaments}}
-				<a href='{{pathFor 'tourney' _id=_id}}'>
-					<p>
-						{{name}}
-					</p>
-				</a>
+				<div class="item">
+					<a href='{{pathFor 'tourney' _id=_id}}'>
+						<p>
+							{{name}}
+						</p>
+					</a>
+				</div>
 			{{/each}}
 		</div>
 	</div>

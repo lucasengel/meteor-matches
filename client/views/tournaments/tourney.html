@@ -43,10 +43,8 @@
                   {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
                 {{/each}}
               </div>
-              <div class="">
-                {{match.teams.[0].points}}
-                <i class="remove icon"></i>
-                {{match.teams.[1].points}}
+              <div>
+                {{match.teams.[0].points}} x {{match.teams.[1].points}}
               </div>
               <div class="grow1 flex">
                 {{#each player in match.teams.[1].players}}
@@ -68,10 +66,8 @@
                   {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
                 {{/each}}
               </div>
-              <div class="">
-                {{match.teams.[0].points}}
-                <i class="remove icon"></i>
-                {{match.teams.[1].points}}
+              <div>
+                {{match.teams.[0].points}} x {{match.teams.[1].points}}
               </div>
               <div class="grow1 flex">
                 {{#each player in match.teams.[1].players}}
