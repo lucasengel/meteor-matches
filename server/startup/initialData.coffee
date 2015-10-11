@@ -66,7 +66,7 @@ Meteor.startup ->
 
 		if Matches.find().count() == 0
 			Matches.insert
-				tournament: t1
+				tournamentId: t1
 				approved: 2
 				teams: [
 					{

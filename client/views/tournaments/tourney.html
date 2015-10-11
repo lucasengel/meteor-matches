@@ -21,13 +21,13 @@
           </tr>
         </thead>
         <tbody>
-          {{#each ranks}}
+          {{#each rank in ranks}}
             <tr>
-              <td>{{ getUserNameById userId }}</td>
-              <td>{{ matches }}</td>
-              <td>{{ wins }}</td>
-              <td>{{ loses }}</td>
-              <td>{{ draws }}</td>
+              <td>{{ getUserNameById rank.userId }}</td>
+              <td>{{ rank.matches }}</td>
+              <td>{{ rank.wins }}</td>
+              <td>{{ rank.loses }}</td>
+              <td>{{ rank.draws }}</td>
             </tr>
           {{/each}}
         </tbody>
@@ -36,33 +36,33 @@
     <div class="ui bottom attached tab" data-tab="matches">
       <div class="ui segments">
         <div class="ui vertically divided grid">
-          <div class="row">
-            <div class="seven wide column">
-              <img class="ui mini circular image right floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-              <img class="ui mini circular image right floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-              <img class="ui mini circular image right floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-              <img class="ui mini circular image right floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-            </div>
-            <div class="two wide column">
-              <form action="post" class="ui form attached fluid">
-                <div class="two fields">
-                  <div class="ui input">
-                    <input type="text" placeholder="0">
+          {{#each match in matches}}
+            <div class="row">
+              <div class="seven wide column">
+                {{#each player in match.teams.[0].players}}
+                  <img class="ui mini circular image right floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+                {{/each}}
+              </div>
+              <div class="two wide column">
+                <form action="post" class="ui form attached fluid">
+                  <div class="two fields">
+                    <div class="ui input">
+                      {{match.teams.[0].points}}
+                    </div>
+                    <i class="remove icon"></i>
+                    <div class="ui input">
+                      {{match.teams.[1].points}}
+                    </div>
                   </div>
-                  <i class="remove icon"></i>
-                  <div class="ui input">
-                    <input type="text" placeholder="0">
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
+              <div class="seven wide column">
+                {{#each player in match.teams.[1].players}}
+                  <img class="ui mini circular image left floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
+                {{/each}}
+              </div>
             </div>
-            <div class="seven wide column">
-              <img class="ui mini circular image left floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-              <img class="ui mini circular image left floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-              <img class="ui mini circular image left floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-              <img class="ui mini circular image left floated" src="https://zechariahtsilkwood.files.wordpress.com/2013/05/smiling-monkey1.jpg">
-            </div>
-          </div>
+          {{/each}}
         </div>
       </div>
     </div>

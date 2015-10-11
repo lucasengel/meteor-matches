@@ -37,7 +37,7 @@ match
 	createdAt: new Date(123123123123),
 	createdBy: "w5HMPn3DqvoiSXNFB",
 	hash: "w5HMPn3DqvoiSXNFB",
-	tournament: "w5HMPn3DqvoiSXNFB",
+	tournamentId: "w5HMPn3DqvoiSXNFB",
 	approved: 2,
 	teams: [
 		{
