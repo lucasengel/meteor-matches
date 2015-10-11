@@ -41,12 +41,6 @@
 						{{ niceDate match.createdAt }}
 					</div>
 
-					{{#if match.tournamentId}}
-					<div class="ui bottom right attached label">
-						Tournament: {{ tournamentName match.tournamentId }}
-					</div>
-					{{/if}}
-
 					<div class="ui right aligned grid">
 						<div class="seven wide column">
               {{#each player in match.teams.[0].players}}
