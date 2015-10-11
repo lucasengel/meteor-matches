@@ -1,12 +1,18 @@
 <template name="tourney_list">
-  <h1>Tournaments</h1>
-  <div class="ui column">
-    <div class="segment">
-      <ul>
-        {{#each tournaments}}
-		<li><a href='{{pathFor 'tourney' _id=_id}}'>{{name}}</a></li>
-        {{/each}}
-      </ul>
-    </div>
-  </div>
+	<h1>Tournaments</h1>
+	<div class="ui column">
+		<div class="segment">
+			<table class="ui definition celled aligned table">
+				<tbody>
+					{{#each tournaments}}
+						<tr>
+							<td>
+								<a href='{{pathFor 'tourney' _id=_id}}'>{{name}}</a>
+							</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
 </template>
