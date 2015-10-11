@@ -67,9 +67,13 @@ Meteor.startup ->
 		if Matches.find().count() == 0
 			Matches.insert
 				tournamentId: t1
+				createdAt: new Date
+				createdBy: u1
+				hash: CryptoJS.MD5([u1,u2].join(',')).toString()
 				approved: 2
 				teams: [
 					{
+						hash: CryptoJS.MD5(u1).toString()
 						players: [u1]
 						score: 0
 						points: 0
@@ -77,6 +81,7 @@ Meteor.startup ->
 						approved: true
 					}
 					{
+						hash: CryptoJS.MD5(u2).toString()
 						players: [u2]
 						score: 4
 						points: 3
