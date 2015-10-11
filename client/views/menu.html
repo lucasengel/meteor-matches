@@ -1,17 +1,14 @@
 <template name="menu">
 	<div class="ui menu secondary pointing">
-		<a class="active item">
-			Dashboard
+		<a class="{{active 'dashboard'}} item">
+			<a href="{{pathFor 'dashboard'}}">Dashboard</a>
 		</a>
-		<a class="item">
-			Tourneys
-		</a>
-		<a class="item">
-			General Scores
+		<a class="{{active 'tourney_list'}} item">
+			<a href="{{pathFor 'tourney_list'}}">Tourneys</a>
 		</a>
 		<div class="right menu">
 			<a class="ui item">
-				Logout
+				<a href="#logout" class="logout">Logout</a>
 			</a>
 		</div>
 	</div>

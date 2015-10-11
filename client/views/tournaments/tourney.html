@@ -2,14 +2,14 @@
 
   <h1>{{ tournamentName }}</h1>
 
-  <div class="ui column stackable grid">
+  <div class="ui segment">
     <div class="ui pointing secondary menu tourney">
       <a class="active item" data-tab="scores">Scores</a>
       <a class="item" data-tab="matches">Matches</a>
       <a class="item" data-tab="grouped">Grouped</a>
     </div>
 
-    <div class="ui bottom attached active tab segment" data-tab="scores">
+    <div class="ui bottom attached active tab" data-tab="scores">
       <h2>Scores</h2>
       <table class="ui definition celled right aligned table">
         <thead>
@@ -34,11 +34,19 @@
         </tbody>
       </table>
     </div>
-    <div class="ui bottom attached tab segment" data-tab="matches">
-      <h2>Matches</h2>
-
+    <div class="ui bottom attached tab" data-tab="matches">
+      <div class="ui segments">
+        <div class="ui segment blue attached">
+          <h2>Matches</h2>
+        </div>
+        <div class="ui three column grid">
+          <div class="seven wide column">1</div>
+          <div class="two wide column">2</div>
+          <div class="seven wide column">3</div>
+        </div>
+      </div>
     </div>
-    <div class="ui bottom attached tab segment" data-tab="grouped">
+    <div class="ui bottom attached tab" data-tab="grouped">
       <h2>Grouped</h2>
     </div>
   </div>

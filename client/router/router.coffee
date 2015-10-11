@@ -1,6 +1,7 @@
 BlazeLayout.setRoot('body')
 
 FlowRouter.route '/',
+	name: 'dashboard'
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "dashboard"}
 
@@ -10,13 +11,14 @@ FlowRouter.route '/matches',
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "matches"}
 
+
+FlowRouter.route '/tourney',
+	name: 'tourney_list'
+	action: (params) ->
+		BlazeLayout.render "mainLayout", {main: "tourney_list"}
+
+
 FlowRouter.route '/tourney/:_id',
 	name: 'tourney'
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "tourney"}
-
-
-FlowRouter.route '/tournaments',
-	name: 'tournaments'
-	action: (params) ->
-		BlazeLayout.render "mainLayout", {main: "tournaments"}
