@@ -107,3 +107,8 @@ Meteor.methods
 			, update
 
 			Meteor.users.update player, update
+
+			delete update.$inc.rating
+			delete update.$inc.wins
+			delete update.$inc.loses
+			Tournaments.update matchData.tournamentId, update

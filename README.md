@@ -17,6 +17,10 @@ tournament
 ```
 	_id: "w5HMPn3DqvoiSXNFB"
 	name: "Snooker"
+	draws: 1,
+	matches: 2,
+	createdAt: new Date(),
+	createdBy: "w5HMPn3DqvoiSXNFB"
 ```
 
 tournament_rank
