@@ -2,6 +2,9 @@
 	<h1>My Matches</h1>
 	<div class="ui segment">
 		{{#each match in matches}}
+			{{#if $gt @index 0}}
+				<div class="ui divider"></div>
+			{{/if}}
 			<div class="row flex align-items-center">
 				<div class="grow1 flex justify-flex-end">
 					{{#each player in match.teams.[0].players}}
