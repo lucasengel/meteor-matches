@@ -1,0 +1,62 @@
+<template name="topPlayers">
+	<h1>Global Ranking</h1>
+	<div class="ui segment">
+		{{#each player in topPlayers}}
+			{{#if $gt @index 0}}
+				<div class="ui divider"></div>
+			{{/if}}
+			<div class='flex align-items-center'>
+				<div class="h2">
+					#{{ add1 @index }}
+				</div>
+				<div>
+					{{> avatar user=player shape="circle" class="avatar-margin-10"}}
+				</div>
+				<div class="grow1 h2">
+					{{ player.profile.name }}
+				</div>
+				<div class='ui mini statistic'>
+					<div class="value">
+						{{ player.rating }}
+					</div>
+					<div class="label">
+						points
+					</div>
+				</div>
+				<div class='ui mini statistic'>
+					<div class="value">
+						{{ player.matches }}
+					</div>
+					<div class="label">
+						matches
+					</div>
+				</div>
+				<div class='ui mini statistic'>
+					<div class="value">
+						{{ player.wins }}
+					</div>
+					<div class="label">
+						wins
+					</div>
+				</div>
+				<div class='ui mini statistic'>
+					<div class="value">
+						{{ player.loses }}
+					</div>
+					<div class="label">
+						loses
+					</div>
+				</div>
+				<div class='ui mini statistic'>
+					<div class="value">
+						{{ player.draws }}
+					</div>
+					<div class="label">
+						draws
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</template>
+

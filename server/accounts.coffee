@@ -1,3 +1,3 @@
 Accounts.addAutopublishFields
-	forOtherUsers: ['emails', 'rating']
-	forLoggedInUser: ['rating']
+	forOtherUsers: ['emails', 'rating', 'matches', 'wins', 'loses', 'draws']
+	forLoggedInUser: ['rating', 'matches', 'wins', 'loses', 'draws']

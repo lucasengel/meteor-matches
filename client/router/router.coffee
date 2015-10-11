@@ -29,3 +29,8 @@ FlowRouter.route '/tourney/:_id/new-match',
 	name: 'tourney_match'
 	action: (params) ->
 		BlazeLayout.render "mainLayout", {main: "tourneyNewMatch"}
+
+FlowRouter.route '/ranking',
+	name: 'ranking'
+	action: (params) ->
+		BlazeLayout.render "mainLayout", {main: "topPlayers"}
