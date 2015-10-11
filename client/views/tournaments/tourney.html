@@ -40,7 +40,7 @@
             <div class="row flex align-items-center">
               <div class="grow1 flex justify-flex-end">
                 {{#each player in match.teams.[0].players}}
-                  {{> avatar userId=player shape="circle"}}
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
                 {{/each}}
               </div>
               <div class="">
@@ -50,7 +50,7 @@
               </div>
               <div class="grow1 flex">
                 {{#each player in match.teams.[1].players}}
-                  {{> avatar userId=player shape="circle"}}
+                  {{> avatar userId=player shape="circle" class="avatar-margin-10"}}
                 {{/each}}
               </div>
             </div>
