@@ -36,4 +36,7 @@ Template.login.events
 				email = t.find('[name=email]').value
 				password = t.find('[name=password]').value
 
-				Meteor.loginWithPassword email, password
+				Meteor.loginWithPassword email, password,
+					(error) ->
+						if error?
+							$('.ui.form').form('add errors', [error.reason])

@@ -11,7 +11,7 @@ Meteor.startup ->
 				matches: 11
 				rating: 100
 				email: 'julio.biason@gmail.com'
-				password: 'test'
+				password: 'test123'
 			u2 = Meteor.users.insert
 				profile:
 					name: 'Gabriel'
@@ -21,7 +21,7 @@ Meteor.startup ->
 				matches: 12
 				rating: 200
 				email: 'gabrielfengel@gmail.com'
-				password: 'test'
+				password: 'test123'
 		else
 			u1 = Meteor.users.find({name:'Julio'})?._id
 			u2 = Meteor.users.find({name:'Gabriel'})?._id
