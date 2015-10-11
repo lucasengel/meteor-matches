@@ -18,3 +18,5 @@ accounts-github
 accounts-password
 accounts-meteor-developer
 service-configuration
+raix:handlebar-helpers
+reactive-var
