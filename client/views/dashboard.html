@@ -1,4 +1,33 @@
 <template name="dashboard">
+  <div class="ui grid">
+    <div class="three column row">
+      <div class="column">
+        <h3 class="ui top attached header">
+          Matches
+        </h3>
+        <div class="ui bottom attached header centered">
+          <a href="{{pathFor 'matches'}}">View all</a>
+        </div>
+      </div>
+      <div class="column">
 
-  dashboard
+        <h3 class="ui top attached header">
+          Tournaments
+        </h3>
+        <div class="ui bottom attached header centered">
+          <a href="{{pathFor 'tourney_list'}}">View all</a>
+        </div>
+      </div>
+      <div class="column">
+
+        <h3 class="ui top attached header">
+          Ranking
+        </h3>
+
+        <div class="ui bottom attached header centered">
+          <a href="{{pathFor 'ranking'}}">View all</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
