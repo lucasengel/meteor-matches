@@ -1,6 +1,6 @@
 <template name="tourney">
 
-  <h1>Tourney Name</h1>
+  <h1>{{ tournamentName }}</h1>
 
   <div class="ui segment">
     <div class="ui pointing secondary menu tourney">
@@ -22,76 +22,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>João</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
+          {{#each ranks}}
+            <tr>
+              <td>{{ getUserNameById userId }}</td>
+              <td>{{ matches }}</td>
+              <td>{{ wins }}</td>
+              <td>{{ loses }}</td>
+              <td>{{ draws }}</td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
