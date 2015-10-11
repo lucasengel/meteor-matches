@@ -1,10 +1,10 @@
-<template name="tournaments">
+<template name="tourney_list">
   <h1>Tournaments</h1>
   <div class="ui column">
     <div class="segment">
       <ul>
         {{#each tournaments}}
-          <li>{{name}}</li>
+		<li><a href='{{pathFor 'tourney' _id=_id}}'>{{name}}</a></li>
         {{/each}}
       </ul>
     </div>

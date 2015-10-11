@@ -1,3 +1,3 @@
-Template.tournaments.helpers
+Template.tourney_list.helpers
 	tournaments: ->
 		return Tournaments.find()
