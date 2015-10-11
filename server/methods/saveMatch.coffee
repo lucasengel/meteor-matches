@@ -31,7 +31,7 @@ Meteor.methods
 			hash: CryptoJS.MD5([hashTeam1, hashTeam2].sort().join('|')).toString()
 			tournamentId: matchData.tournamentId
 			approved: 0
-			teams: [
+			teams: _.sortBy([
 				{
 					hash: hashTeam1
 					players: matchData.team1.players
@@ -48,4 +48,4 @@ Meteor.methods
 					decision: decisionTeam2
 					approved: false
 				}
-			]
+			], 'hash')

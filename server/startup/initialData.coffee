@@ -65,15 +65,18 @@ Meteor.startup ->
 				rating: 100
 
 		if Matches.find().count() == 0
+			hu1 = CryptoJS.MD5(u1).toString()
+			hu2 = CryptoJS.MD5(u2).toString()
+
 			Matches.insert
 				tournamentId: t1
 				createdAt: new Date
 				createdBy: u1
-				hash: CryptoJS.MD5([u1,u2].join(',')).toString()
+				hash: CryptoJS.MD5([hu1,hu2].sort().join('|')).toString()
 				approved: 2
-				teams: [
+				teams: _.sortBy([
 					{
-						hash: CryptoJS.MD5(u1).toString()
+						hash: hu1
 						players: [u1]
 						score: 0
 						points: 0
@@ -81,11 +84,11 @@ Meteor.startup ->
 						approved: true
 					}
 					{
-						hash: CryptoJS.MD5(u2).toString()
+						hash: hu2
 						players: [u2]
 						score: 4
 						points: 3
 						decision: 1
 						approved: true
 					}
-				]
+				], 'hash')
